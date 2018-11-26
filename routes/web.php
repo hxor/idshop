@@ -18,3 +18,13 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/**
+ * Example Role Middleware
+ */
+Route::get('/role/admin', function () {
+    return 'Role Admin';
+})->middleware(['auth', 'role:admin']);
+ Route::get('/role/customer', function () {
+    return 'Role Customer';
+})->middleware(['auth', 'role:customer']);
