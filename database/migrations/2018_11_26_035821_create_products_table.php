@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->string('image');
             $table->decimal('price', 10, 2);
+            $table->integer('weigth')->unsigned();
             $table->timestamps();
         });
     }
